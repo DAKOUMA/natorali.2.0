@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: sans-serif;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.timeLine-content {
+  display: flex;
+}
+
+.home-container {
+  display: flex;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+footer > div {
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+ul {
+  display: flex;
+}/*# sourceMappingURL=index.css.map */
