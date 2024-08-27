@@ -9,7 +9,7 @@ const About = () => {
   return (
     <>
       <NavBar />
-      <main className="about-container">
+      <main className="about-container container">
         <article className="timeLine-container">
           <div className="timeLine">
             <span className="line">line</span>

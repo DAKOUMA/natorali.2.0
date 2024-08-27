@@ -41,6 +41,29 @@ ul, ol {
     list-style: none;
 }
 
+.container {
+    padding-top: 10rem;
+    margin: auto;
+}
+.container-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    padding-top: 7rem;
+    margin: auto;
+}
+
+@media screen and (min-width: 1720px) {
+    .container, .container-2 {
+        width: 1720px;
+    }
+}
+// variable sass
+
+$baseColor-green: #145858;
+$baseColor-lightGreen: #C9E0CA;
+$baseColor-yellow: #F7B318;
+
 // Importations styles
 
 @import './pages/about/About';

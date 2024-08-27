@@ -1,8 +1,20 @@
 footer {
+    box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.234);
+    height: 150px;
+    background-color: $baseColor-lightGreen;
+    color: $baseColor-green;
+    margin: 10rem auto 0rem auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
     > div {
         display: flex;
+        letter-spacing: 2px;
         flex-direction: column;
+        text-align: center;
+        justify-content: space-around;
+        height: 100%;
     }
 }

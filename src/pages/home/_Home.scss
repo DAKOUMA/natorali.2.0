@@ -1,3 +1,117 @@
 .home-container {
     display: flex;
 }
+
+.home-text {
+    button {
+        cursor: pointer;
+        color: $baseColor-green;
+        border-radius: 6px;
+        display: block;
+        border: none;
+        padding: 0 1rem 0 1rem;
+        background-color: $baseColor-yellow;
+        letter-spacing: 5px;
+        width: 40%;
+        transition: 0.2s ease-in;
+        &:hover{
+            background-color: white;
+            scale: 1.02;
+            color: $baseColor-yellow;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.529);
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .home-container {
+        flex-direction: column;
+    }
+    .home-logo-gm {
+        display: none;
+    }
+
+    .home-logo {
+        width: 90%;
+        margin: auto;
+    }
+
+    .home-text {
+        h1 ,h2 {
+            display: none;
+        }
+        p {
+            padding: 1rem 3rem 1rem 3rem;
+            letter-spacing: 2px;
+        }
+        button {
+            font-size: 1.4rem;
+            margin: auto;
+        }
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .home-container {
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .home-logo {
+        display: none;
+    }
+    .home-logo-gm {
+        width: 30%;
+    }
+
+    .home-text {
+        h1 {
+            color: $baseColor-green;
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: 25px;
+        }
+        h2 {
+            color: $baseColor-green;
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 5px;
+        }
+        p {
+            font-size: 1rem;
+            letter-spacing: 4px;
+            margin: 1.5rem 0 1.5rem 0;
+        }
+        button {
+            font-size: 1.7rem;
+            transform-origin: center left;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .home-logo-gm {
+        width: 25%;
+    }
+    .home-text {
+        width: 50%;
+        p {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            margin: 1.5rem 0 1.5rem 0;
+        }
+        h1 {
+            font-size: 5rem;
+            font-weight: 400;
+            letter-spacing: 30px;
+        }
+        h2 {
+            font-size: 1.7rem;
+            letter-spacing: 6px;
+        }
+    }
+}
+
+@import './Drop1';
+@import './Container-2'

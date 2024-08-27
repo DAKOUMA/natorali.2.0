@@ -1,1 +1,6 @@
 export {default as goutte} from './goutte.png'
+export {default as goutteResp} from './goutteResp.png'
+export {default as goutteGm} from './goutteGm.png'
+export {default as huile} from './huile.png'
+export {default as force} from './force.png'
+export {default as logo} from './logoSvg.svg'

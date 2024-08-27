@@ -1,0 +1,204 @@
+@mixin dropEffect ($borderRadius, $scale, $rotate) {
+    scale: $scale;
+    width: 200px;
+    height: 200px;
+    border-radius: $borderRadius;
+    box-shadow:  
+    10px 15px 16px #17241a88,
+    inset 10px 10px 20px #05250d93, 
+    inset -20px -20px 22px rgba(211, 255, 212, 0.439), 
+    inset 40px -40px 44px #b8ffa881;
+}
+
+.drop {
+    position: absolute;
+    z-index: 1;
+    top: 150px;
+    width: 200px;
+    height: 200px;
+    background-color:  #8bce389f;
+    border-radius: 57% 43% 37% 67% / 45% 52% 48% 52%;
+    /*box-shadow: 
+    inset 10px 10px 10px rgba(0, 0, 0, 0.5),
+    15px 25px 10px rgba(46, 89, 45, 0.1),
+    15px 20px 20px rgba(39, 64, 35, 0.5), 
+    inset -10px -10px 15px rgba(215, 255, 190, 0.9);*/
+    box-shadow:  
+    10px 15px 16px #17241a88,
+    inset 10px 10px 20px #05250d93, 
+    
+    inset -20px -20px 22px rgba(211, 255, 212, 0.439), 
+    inset 40px -40px 44px #b8ffa881;
+    animation: jelly 6s infinite;
+
+}
+
+.drop::before, .drop3::after, .drop2::before, .drop4::before   {
+    content: '';
+    position: absolute;
+    left: 35px;
+    top: 35px;
+    width: 20px;
+    height: 20px;
+    border-radius: 42% 58% 37% 63% / 40% 43% 57% 60%;
+    background: rgba(252, 252, 252, 0.819);
+    animation: animate-reflect 8s infinite;
+}
+
+.drop3::before {
+    content: '';
+    transform: rotate(50deg);
+    position: absolute;
+    left: 80px;
+    top: 20px;
+    width: 15px;
+    height: 20px;
+    border-radius: 0% 100% 0% 100% / 0% 100% 0% 100% ;
+    background: rgba(255, 255, 255, 0.783);
+}
+
+.drop::after, .drop2::after, .drop4::after{
+    content: '';
+    position: absolute;
+    left: 70px;
+    top: 20px;
+    width: 10px;
+    height: 10px;
+    border-radius: 42% 58% 37% 63% / 40% 43% 57% 60%;
+    background: rgba(255, 255, 255, 0.783);
+}
+
+@keyframes jelly {
+    0% {
+        border-radius: 57% 43% 37% 67% / 45% 52% 48% 52%;
+    }
+    20% {
+        border-radius: 57% 53% 37% 67% / 45% 52% 48% 52%;
+    }
+    40% {
+        border-radius: 57% 43% 37% 67% / 45% 42% 48% 52%;
+    }
+    60% {
+        border-radius: 57% 43% 37% 47% / 45% 52% 48% 52%;
+    }
+    80% {
+        border-radius: 57% 43% 37% 67% / 35% 52% 48% 52%;
+    }
+    100% {
+        border-radius: 57% 43% 37% 67% / 45% 52% 48% 52%;
+    }
+}
+@keyframes animate-reflect {
+    0% {
+        transform: translateX(0%);
+    }
+    20% {
+        transform: translateX(-10%);
+    }
+    40% {
+        transform: translateX(10%);
+    }
+    60% {
+        transform: translateX(5%) ;
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+
+.drop1 {
+    position: absolute;
+    z-index: 1;
+    transform: rotate(59deg);
+    top: 300px;
+    left: 70%;
+    width: 60px;
+    height: 60px;
+    background-color: #8bce389f;
+    border-radius: 57% 43% 37% 67% / 45% 52% 48% 52%;
+    box-shadow: 
+    inset 5px 5px 5px rgba(0, 0, 0, 0.5),
+    5px 8px 3px rgba(46, 89, 45, 0.1),
+    4px 8px 4px rgba(39, 64, 35, 0.5), 
+    inset -5px -5px 7px rgba(215, 255, 190, 0.9);
+    animation: jelly 6s infinite;
+
+}
+
+.drop1::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 5px;
+
+    width: 6px;
+    height: 5px;
+    border-radius: 42% 68% 37% 63% / 40% 43% 57% 60%;
+    background: rgba(252, 252, 252, 0.819);
+}
+
+.drop1::after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 9px;
+    width: 3px;
+    height: 6px;
+    border-radius: 42% 58% 37% 63% / 40% 43% 57% 60%;
+    background: rgba(255, 255, 255, 0.819);
+}
+
+@keyframes jelly1 {
+    0% {
+        border-radius: 57% 43% 37% 67% / 45% 52% 48% 52%;
+    }
+    20% {
+        border-radius: 57% 53% 37% 67% / 45% 52% 48% 52%;
+    }
+    40% {
+        border-radius: 57% 43% 37% 67% / 45% 42% 48% 52%;
+    }
+    60% {
+        border-radius: 57% 43% 37% 47% / 45% 52% 48% 52%;
+    }
+    80% {
+        border-radius: 57% 43% 37% 67% / 35% 52% 48% 52%;
+    }
+    100% {
+        border-radius: 57% 43% 37% 67% / 45% 52% 48% 52%;
+    }
+}
+
+.drop2 {
+    position: absolute;
+    z-index: 1;
+    transform: rotate(59deg);
+    top: 700px;
+    left: 25%;
+    background-color: #8bce389f;
+    @include dropEffect(57% 43% 37% 67% / 45% 52% 48% 52%, 0.5, 0deg);
+    animation: jelly1 8s infinite;
+  }
+
+  .drop3 {
+    position: absolute;
+    z-index: 1;
+    transform: rotate(90deg);
+    top: 1600px;
+    left: 60%;
+    background-color: #8bce389f;
+    @include dropEffect(57% 43% 37% 67% / 45% 52% 48% 52%, 0.5, 0deg);
+    animation: jelly1 4s infinite;
+  }
+
+  .drop4 {
+    position: absolute;
+    z-index: 1;
+    transform: rotate(9deg);
+    top: 1100px;
+    left: 30%;
+    background-color: #8bce389f;
+    @include dropEffect(57% 43% 7% 67% / 45% 52% 48% 52%, 0.2, 0deg);
+    animation: jelly1 9s infinite;
+  }
