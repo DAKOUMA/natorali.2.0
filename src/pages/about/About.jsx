@@ -4,9 +4,11 @@ import Footer from '../../components/footer/Footer'
 import TimelineContent from "./TimelineContent"
 import { goutte } from "../../assets/images/images"
 import TeamMember from "./TeamMember"
+import { Link } from "react-router-dom"
+import contentText from './Content'
 
 const About = () => {
-  const [date, setDate] = useState(0);
+  const [date, setDate] = useState(25);
   const [timelineProgress, setTimelineProgress] = useState(0)
   const [mousePointer, setMousePointer] = useState(0);
 
@@ -19,38 +21,46 @@ const About = () => {
 
 
     setMousePointer(mousePositionY)
-    
+
     console.log(mousePositionY);
 
   }
 
   useEffect(() => {
+      document.documentElement.style.setProperty('--mouse-position', 25), setDate(25);
     if (ref.current) {
       ref.current.addEventListener('mousemove', handleMousePosition)
+
     }
 
     return () => {
 
-      ref.current.removeEventListener('mousemove', handleMousePosition)
       if (ref.current) {
         ref.current.removeEventListener('mousemove', handleMousePosition);
       }
     }
   }, [])
 
+  useEffect(() => {
+    
+  })
+
   const handleDateClick = (e) => {
-    switch (e) {
-      case 1: document.documentElement.style.setProperty('--mouse-position', 25), setDate(25);
-        break;
+    setTimeout(() => {
+      switch (e) {
+        case 1: document.documentElement.style.setProperty('--mouse-position', 25), setDate(25);
+          break;
 
-      case 2: document.documentElement.style.setProperty('--mouse-position', 50), setDate(50);
-        break;
+        case 2: document.documentElement.style.setProperty('--mouse-position', 50), setDate(50);
+          break;
 
-      case 3: document.documentElement.style.setProperty('--mouse-position', 100, setDate(100));
-      default:
-        break;
-    }
-    console.log(date);
+        case 3: document.documentElement.style.setProperty('--mouse-position', 100, setDate(100));
+        default:
+          break;
+      }
+      console.log(date);
+
+    }, 300);
 
   }
 
@@ -63,7 +73,7 @@ const About = () => {
             <span
               className="line"
               ref={ref}
-            >line
+            >
             </span>
             <span
               className={`date date-1 ${date >= 25 ? 'active-date' : ''}`}
@@ -81,7 +91,18 @@ const About = () => {
             >
             </span>
           </div>
-          <TimelineContent />
+          <div className="timelineText-container" >
+            {
+              contentText.map((value, index) => (
+                <TimelineContent 
+                date={date}
+                setDate={setDate}
+                content={value}
+                key={index}
+                />
+              ))
+            }
+          </div>
         </article>
         <article className="team-container">
           <h1>Our Team</h1>

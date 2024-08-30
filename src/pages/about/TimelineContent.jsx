@@ -1,18 +1,20 @@
-import React from 'react'
-import { goutte } from '../../assets/images/images'
+import React, { useEffect } from 'react'
+import { goutte, huile } from '../../assets/images/images'
+import contentText from './Content'
+const TimelineContent = (props) => {
 
-const TimelineContent = () => {
+    const date = props.date
+    const setDate = props.setDate
+    const Text = props.content
     return (
-        <div className="timeLine-content">
-            <div className="timeLine-content-text">
-                <h1>TITLE TIMELINE</h1>
+        <div onClick={() => setDate(100) } className={`timeLine-content ${date === Text.name ? 'show-content' : 'hide-content'}`}>
+            <div className="timeLine-content-text ">
+                <h1>{Text.title}</h1>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    {Text.text}
                 </p>
             </div>
-            <figure className="timeLine-content-image">
-                <img src={goutte} alt="" />
-            </figure>
+            <img src={Text.image} alt="" className='timeLine-content-image' />
         </div>
     )
 }

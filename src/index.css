@@ -42,6 +42,7 @@ ul, ol {
 .container {
   padding-top: 10rem;
   margin: auto;
+  overflow: hidden;
 }
 
 .container-2 {
@@ -63,6 +64,13 @@ ul, ol {
 
 .timeLine-content {
   display: flex;
+}
+
+.timeLine-container {
+  position: relative;
+  height: -moz-fit-content;
+  height: fit-content;
+  z-index: 2;
 }
 
 .timeLine {
@@ -116,6 +124,65 @@ ul, ol {
   left: calc(75% - 15px);
 }
 
+.timelineText-container {
+  position: relative;
+}
+
+.timeLine-content {
+  -webkit-backdrop-filter: blur(80px);
+          backdrop-filter: blur(80px);
+  z-index: -2;
+  position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
+  transition: 3s ease-in-out;
+  transform-origin: right top;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.timeLine-content-text {
+  text-align: center;
+  padding: 1rem;
+}
+.timeLine-content-image {
+  transition: width 1s ease-in-out;
+  width: 100%;
+  margin: auto;
+}
+
+.show-content {
+  transform: scale(1);
+  z-index: -2;
+}
+.hide-content {
+  transform: scale(-2);
+  opacity: 0;
+  filter: blur(40px);
+  z-index: -3;
+}
+.team-container {
+  position: relative;
+  margin-top: 3rem;
+}
+
+@media screen and (min-width: 670px) {
+  .timeLine-content {
+    flex-direction: row;
+    align-items: self-start;
+  }
+  .timeLine-content-text {
+    text-align: left;
+    padding: 1rem;
+  }
+  .timeLine-content-image {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 932px) {
+  .timeLine-content-image {
+    width: 40%;
+  }
+}
 .home-container {
   display: flex;
 }
