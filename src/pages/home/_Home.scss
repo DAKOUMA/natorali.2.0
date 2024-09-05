@@ -13,10 +13,10 @@
         background-color: $baseColor-yellow;
         letter-spacing: 5px;
         width: 40%;
-        transition: 0.2s ease-in;
-        &:hover{
+        transition: 0.5s ease-in;
+        &:hover {
             background-color: white;
-            scale: 1.02;
+            scale: 1.1;
             color: $baseColor-yellow;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.529);
         }
@@ -27,6 +27,7 @@
     .home-container {
         flex-direction: column;
     }
+
     .home-logo-gm {
         display: none;
     }
@@ -37,16 +38,25 @@
     }
 
     .home-text {
-        h1 ,h2 {
+
+        h1,
+        h2 {
             display: none;
         }
+
         p {
             padding: 1rem 3rem 1rem 3rem;
             letter-spacing: 2px;
         }
+
         button {
+            display: flex;
             font-size: 1.4rem;
-            margin: auto;
+            margin: 3rem auto 0 auto;
+
+            >a {
+                width: 100%;
+            }
         }
     }
 }
@@ -61,6 +71,7 @@
     .home-logo {
         display: none;
     }
+
     .home-logo-gm {
         width: 30%;
     }
@@ -72,18 +83,22 @@
             font-weight: 400;
             letter-spacing: 25px;
         }
+
         h2 {
             color: $baseColor-green;
             font-size: 1rem;
             font-weight: 400;
             letter-spacing: 5px;
         }
+
         p {
             font-size: 1rem;
             letter-spacing: 4px;
             margin: 1.5rem 0 1.5rem 0;
         }
+
         button {
+
             font-size: 1.7rem;
             transform-origin: center left;
         }
@@ -94,21 +109,29 @@
     .home-logo-gm {
         width: 25%;
     }
+
     .home-text {
         width: 50%;
+
         p {
             font-size: 1.2rem;
             letter-spacing: 4px;
             margin: 1.5rem 0 1.5rem 0;
         }
+
         h1 {
             font-size: 5rem;
             font-weight: 400;
             letter-spacing: 30px;
         }
+
         h2 {
             font-size: 1.7rem;
             letter-spacing: 6px;
+        }
+
+        button {
+            margin: 3rem auto 0 0;
         }
     }
 }

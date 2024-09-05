@@ -1,0 +1,155 @@
+
+.all-contact {
+    height: 100vh;
+    > footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+
+.contact {
+
+    &-name, &-mail, &-text{
+        position: relative;
+        display: flex;
+        justify-items: center;
+        margin: auto;
+        border-bottom: 1px solid $baseColor-lightGreen;
+        > label {
+            display: flex;
+            padding: 0.4rem;
+            > svg {
+                margin: auto;
+                width: 1.3rem;
+                height: 1.3rem;
+                color: $baseColor-yellow;
+            }
+        }
+        > input, textarea {
+            background: none;
+            padding-left: 0.5rem;
+            border: none;
+            width: 300px;
+            &:focus-visible {
+                outline: none;
+            }
+        }
+        > span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 0.8rem;
+        }
+    }
+}
+
+fieldset {
+    border: none;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3rem;
+    > button {
+        cursor: pointer;
+        color: $baseColor-green;
+        border-radius: 6px;
+        display: block;
+        border: none;
+        padding: 0 1rem 0 1rem;
+        background-color: $baseColor-yellow;
+        letter-spacing: 5px;
+        width: 40%;
+        margin: auto;
+        transition: 0.5s ease-in-out;
+        &:hover {
+            background-color: white;
+            scale: 1.1;
+            color: $baseColor-yellow;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.529);
+        }
+    }
+}
+
+.active-input {
+    animation: backGround-animate 1s forwards;
+    background: linear-gradient(0deg, rgba(222,233,223,1) 0%, rgba(255,255,255,1) 50%);
+}
+
+.social-media {
+    margin-top: 4rem;
+    h1 {
+        text-align: center;
+        letter-spacing: 3px;
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    > .social-media-container {
+        
+        display: flex;
+        justify-content: space-around;
+        > div {
+            color: $baseColor-green;
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            transition: 1s ease-in-out;
+            &:hover {
+                color: $baseColor-yellow;
+                scale: 0.8;
+            }
+            > h2 {
+                font-weight: 400;
+                text-align: center;
+                font-size: 1rem;
+            }
+            > a {
+                display: inline-block;
+                margin: auto;
+            }
+        }
+    }
+}
+
+@keyframes backGround-animate {
+    0% {
+        background-position: 0% 0%; /* Position initiale */
+    }
+    100% {
+        background-position: 0% 100%; /* Fait défiler le dégradé vers le bas */
+    }
+}
+
+@media screen and (min-width: 800px) {
+    fieldset {
+        margin: auto;
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        > button {
+            letter-spacing: 10px;
+            width: 225px;
+            
+        }
+    }
+
+    .contact {
+
+        &-name, &-mail{
+            margin: auto;
+            width: 40%;
+            border-bottom: 1px solid $baseColor-lightGreen;
+            > input {
+                width: 100%;
+            }
+        }
+        &-text {
+            margin: auto;
+            width: 90%;
+            > textarea {
+                width: 100%;
+            }
+        }
+    }
+
+}

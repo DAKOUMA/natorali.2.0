@@ -1,0 +1,14 @@
+.card {
+    transform: rotateX(var(--mouseDegX)) rotateY(var(--mouseDegY)) translateX(var(--mousePxX)) translateY(var(--mousePxY));
+
+    &:hover {
+        box-shadow: var(--mousePxY) var(--mousePxX) 10px -4px $baseColor-yellow;
+
+        >img {
+            box-shadow: var(--mousePxY) var(--mousePxX) 10px -5px black;
+            transform:
+                rotateY(var(--mouseDegY)) rotateX(var(--mouseDegX)) translateY(var(--mousePxY)) translateX(var(--mousePxX))
+        }
+    }
+
+}

@@ -18,3 +18,13 @@ footer {
         height: 100%;
     }
 }
+
+.footer-link {
+    > a {
+        transition: 0.5s ease-in-out;
+        &:hover {
+            color: $baseColor-yellow;
+            scale: 0.9;
+        }
+    }
+}

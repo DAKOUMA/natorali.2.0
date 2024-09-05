@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import NavBar from '../../components/navbar/NavBar'
 import Footer from '../../components/footer/Footer'
 import Drop from './Drop'
 import { goutte, goutteGm, goutteResp, huile, force } from '../../assets/images/images'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Home = () => {
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 })
+  }, [])
+  const navigate = useNavigate()
+
   return (
     <>
       <NavBar />
@@ -32,7 +38,7 @@ const Home = () => {
           <p>
             Chez Natorali, nous nous engageons à offrir le meilleur de la nature, en transformant les richesses de Madagascar en huiles végétales 100% pures et naturelles. Nos huiles, issues d'une première pression à froid, préservent toute la richesse des nutriments pour vous offrir un produit de qualité exceptionnelle.
           </p>
-          <button><Link to={'/about'}>About Us</Link></button>
+          <button onClick={() => navigate('/about')}><Link to={'/about'}>About Us</Link></button>
         </article>
       </main>
       <main className='container-2'>

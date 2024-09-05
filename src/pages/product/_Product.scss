@@ -1,0 +1,261 @@
+.product-container {
+    >h1 {
+        font-size: 3rem;
+        font-weight: 600;
+        letter-spacing: 4px;
+        margin-bottom: 2rem;
+        color: $baseColor-green;
+        text-align: center;
+    }
+
+    >h2 {
+        font-weight: 400;
+        letter-spacing: 1px;
+        padding: 0.5rem;
+    }
+}
+
+.productCard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.productCard {
+    width: 300px;
+    margin: auto;
+    overflow: hidden;
+    padding: 1rem;
+    display: flex;
+    position: relative;
+    justify-content: center;
+
+    >h1 {
+        cursor: pointer;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: auto;
+        position: absolute;
+        text-align: center;
+        letter-spacing: 2px;
+        color: white;
+    }
+
+    >.product-image {
+        transition: 1s ease-in-out;
+        cursor: pointer;
+        border-radius: 65% 35% 0% 100% / 26% 100% 0% 74%;
+        box-shadow: 5px 5px 10px -4px black;
+        scale: 0.9;
+
+    }
+
+    >p {
+        display: none;
+    }
+}
+
+@for $i from 1 through 4 {
+    .productCard-container {
+        div:nth-child(#{$i}) {
+            >.product-image {
+                animation: borderAnimation-#{$i} 10s infinite ease-in-out;
+
+                &:hover {
+                    scale: 1;
+                    box-shadow: 5px 5px 15px -4px $baseColor-yellow;
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes borderAnimation-1 {
+    0% {
+        border-radius: 19% 81% 71% 29% / 18% 27% 73% 82%;
+    }
+
+    33% {
+        border-radius: 75% 25% 37% 63% / 85% 62% 38% 15%;
+    }
+
+    66% {
+        border-radius: 20% 80% 77% 23% / 29% 87% 13% 71%;
+    }
+
+    100% {
+        border-radius: 19% 81% 71% 29% / 18% 27% 73% 82%;
+    }
+}
+
+@keyframes borderAnimation-2 {
+    0% {
+        border-radius: 82% 18% 26% 74% / 55% 52% 48% 45%;
+    }
+
+    33% {
+        border-radius: 25% 75% 49% 51% / 80% 26% 74% 20%;
+    }
+
+    66% {
+        border-radius: 66% 34% 16% 84% / 30% 26% 74% 70%;
+    }
+
+    100% {
+        border-radius: 82% 18% 26% 74% / 55% 52% 48% 45%;
+    }
+}
+
+@keyframes borderAnimation-3 {
+    0% {
+        border-radius: 66% 34% 76% 24% / 82% 83% 17% 18%;
+    }
+
+    33% {
+        border-radius: 85% 15% 25% 75% / 16% 83% 17% 84%;
+    }
+
+    66% {
+        border-radius: 38% 62% 56% 44% / 83% 31% 69% 17%;
+    }
+
+    100% {
+        border-radius: 66% 34% 76% 24% / 82% 83% 17% 18%;
+    }
+}
+
+@keyframes borderAnimation-4 {
+    0% {
+        border-radius: 63% 37% 15% 85% / 83% 82% 18% 17%;
+    }
+
+    33% {
+        border-radius: 32% 68% 65% 35% / 31% 21% 79% 69%;
+    }
+
+    66% {
+        border-radius: 20% 80% 17% 83% / 79% 76% 24% 21%;
+    }
+
+    100% {
+        border-radius: 63% 37% 15% 85% / 83% 82% 18% 17%;
+    }
+}
+
+.overlayBackground {
+    display: flex;
+    z-index: 2;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    animation: fadeInOut 0.5s ease-in-out;
+}
+
+.overlayContent {
+    position: relative;
+    z-index: 3;
+    border-radius: 0.3rem;
+    background: linear-gradient(217deg, rgb(210, 244, 201), rgb(157, 222, 201) 70.71%);
+    box-shadow: 0px 0px 30px -5px rgba(255, 255, 255, 0.695);
+    width: 80%;
+    margin: auto;
+    padding: 1rem;
+
+    >h1 {
+        font-size: 2rem;
+        letter-spacing: 3px;
+        color: white;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    >p {
+        color: $baseColor-green;
+        letter-spacing: 2px;
+    }
+}
+
+.Xoverlay {
+    cursor: pointer;
+    color: $baseColor-yellow;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-100%);
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+        scale: 1.2;
+    }
+}
+
+.overlay-icon {
+    width: 60px;
+    border-radius: 0;
+    margin: 1rem auto 1rem auto;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 860px) {
+    .product-container {
+        >h1 {
+            font-size: 5rem;
+        }
+
+        >h2 {
+            font-size: 2rem;
+            text-align: center;
+        }
+    }
+
+    .productCard-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 7rem;
+    }
+
+    .overlayContent {
+        padding: 2rem;
+
+        >h1 {
+            font-size: 4rem;
+            letter-spacing: 3px;
+            color: white;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        >p {
+            font-size: 1.5rem;
+        }
+    }
+
+    .Xoverlay {
+        cursor: pointer;
+        scale: 1.5;
+
+        &:hover {
+            scale: 1.8;
+        }
+    }
+
+    .overlay-icon {
+        width: 120px;
+        border-radius: 0;
+        margin: 2rem auto 1rem auto;
+    }
+}

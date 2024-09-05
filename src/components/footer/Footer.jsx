@@ -13,8 +13,8 @@ const Footer = () => {
         <span>+261 32 42 672 35</span>
       </div>
       <div className='footer-link'>
-        <Link to={'#'}><FaFacebookSquare size={'2rem'}/></Link>
-        <Link to={'#'}><IoIosMail size={'2rem'}/></Link>
+        <Link to={'https://web.facebook.com/natorali'}><FaFacebookSquare size={'2rem'}/></Link>
+        <Link to={'mailto:ramerison.anselme@gmail.com'}><IoIosMail size={'2rem'}/></Link>
       </div>
     </footer>
   )
