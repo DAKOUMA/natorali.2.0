@@ -78,20 +78,17 @@
 
 .timelineText-container {
     position: relative;
+    width: fit-content;
     z-index: -1;
-    transition: height 1s ease-in-out;
+}
+
+.content-slider {
 }
 
 .timeLine-content {
-    backdrop-filter: blur(80px);
     z-index: -2;
-    position: absolute;
-    display: flex;
     flex-direction: column-reverse;
-    transition: 3s ease-in-out;
-    transform-origin: right top;
     overflow: hidden;
-    border-radius: 1rem;
 
     &-text {
         text-align: center;
@@ -110,35 +107,12 @@
     }
 
     &-image {
-        transition: width 1s ease-in-out;
         width: 100%;
         margin: auto;
 
     }
 }
 
-
-.show-content {
-    position: relative;
-    transform: scale(1);
-    z-index: -2;
-
-    >div {}
-
-    >img {}
-}
-
-.hide-content {
-    height: 0;
-    transform: scale(0);
-    opacity: 0;
-    filter: blur(40px);
-    z-index: -3;
-
-    >div {}
-
-    >img {}
-}
 
 .team-container {
     background-repeat: no-repeat;
@@ -161,6 +135,11 @@
     padding-bottom: 2rem;
 }
 
+.card-div-container{
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
 .team-card {
     transition: box-shadow 0.4s;
     border-radius: 10px;
@@ -280,7 +259,10 @@
     }
 
     .team-card {
-        width: 200px;
+        display: flex;
+        padding: 0.5rem;
+        width: 220px;
+        height: 325px;
     }
 }
 

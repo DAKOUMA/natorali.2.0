@@ -149,21 +149,15 @@ ol {
 
 .timelineText-container {
   position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
   z-index: -1;
-  transition: height 1s ease-in-out;
 }
 
 .timeLine-content {
-  -webkit-backdrop-filter: blur(80px);
-          backdrop-filter: blur(80px);
   z-index: -2;
-  position: absolute;
-  display: flex;
   flex-direction: column-reverse;
-  transition: 3s ease-in-out;
-  transform-origin: right top;
   overflow: hidden;
-  border-radius: 1rem;
 }
 .timeLine-content-text {
   text-align: center;
@@ -179,23 +173,10 @@ ol {
   letter-spacing: 1px;
 }
 .timeLine-content-image {
-  transition: width 1s ease-in-out;
   width: 100%;
   margin: auto;
 }
 
-.show-content {
-  position: relative;
-  transform: scale(1);
-  z-index: -2;
-}
-.hide-content {
-  height: 0;
-  transform: scale(0);
-  opacity: 0;
-  filter: blur(40px);
-  z-index: -3;
-}
 .team-container {
   background-repeat: no-repeat;
   background-position: center;
@@ -214,6 +195,12 @@ ol {
   flex-direction: column;
   gap: 5rem;
   padding-bottom: 2rem;
+}
+
+.card-div-container {
+  display: flex;
+  width: 90%;
+  margin: auto;
 }
 
 .team-card {
@@ -309,7 +296,10 @@ ol {
     grid-row: 2;
   }
   .team-card {
-    width: 200px;
+    display: flex;
+    padding: 0.5rem;
+    width: 220px;
+    height: 325px;
   }
 }
 .card {
@@ -575,24 +565,10 @@ fieldset > button:hover {
     margin: 3rem auto 0 0;
   }
 }
-.autoShowElement {
-  animation: autoShowAnimation both;
-  animation-timeline: view(70% 0%);
-}
-
-@keyframes autoShowAnimation {
-  from {
-    opacity: 0;
-    transform: translateY(200px) scale(0.1);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
 .drop {
   position: absolute;
   z-index: 1;
+  left: 120px;
   top: 150px;
   width: 200px;
   height: 200px;
@@ -754,7 +730,7 @@ fieldset > button:hover {
   position: absolute;
   z-index: 1;
   transform: rotate(90deg);
-  top: 200px;
+  top: 1300px;
   left: 40%;
   background-color: rgba(139, 206, 56, 0.6235294118);
   scale: 0.5;
