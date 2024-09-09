@@ -42,7 +42,7 @@ const Home = () => {
         </article>
       </main>
       <main className='container-2'>
-        <article className='home-fabrication' >
+        <article className='home-fabrication autoShowElement' >
           <div
             className='home-fabrication-image animate-image-base'
             style={{ backgroundImage: `url(${huile})` }}
@@ -60,7 +60,7 @@ const Home = () => {
             </div>
           </div>
         </article>
-        <article className='home-eco'>
+        <article className='home-eco autoShowElement'>
           <div
             className='home-eco-image animate-image-base'
             style={{ backgroundImage: `url(${force})` }}

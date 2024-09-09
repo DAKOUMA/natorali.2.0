@@ -185,8 +185,8 @@
     position: absolute;
     z-index: 1;
     transform: rotate(90deg);
-    top: 1600px;
-    left: 60%;
+    top: 200px;
+    left: 40%;
     background-color: #8bce389f;
     @include dropEffect(57% 43% 37% 67% / 45% 52% 48% 52%, 0.5, 0deg);
     animation: jelly1 4s infinite;
@@ -196,7 +196,7 @@
     position: absolute;
     z-index: 1;
     transform: rotate(9deg);
-    top: 1100px;
+    top: 900px;
     left: 30%;
     background-color: #8bce389f;
     @include dropEffect(57% 43% 7% 67% / 45% 52% 48% 52%, 0.2, 0deg);
