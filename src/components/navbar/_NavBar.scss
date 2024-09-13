@@ -1,4 +1,18 @@
+.scrolled {
+    .navbarMenu-list-lg {
+        width: 400px;
+        justify-content: space-around;
+        margin-bottom: 0.5rem;
+        > li {
+            > a {
+                color: $baseColor-lightGreen;
+            }
+        }
+    }
+}
+
 nav {
+    transition: ease-in-out;
     background-color: $baseColor-green;
     display: flex;
     justify-content: space-between;
@@ -46,7 +60,9 @@ nav {
 .navbarMenu-list-lg {
     width: 400px;
     justify-content: space-around;
+    margin-bottom: 0.5rem;
     > li {
+        color: $baseColor-green;
         > a {
             display: inline-block;
             transition: 300ms;

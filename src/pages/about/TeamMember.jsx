@@ -1,12 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { motion } from 'framer-motion'
 
 const TeamMember = (props) => {
+
+  const cardAnimation = {
+    hidden: { x: 0},
+    visible: { x: [0, 10, -10, 10, 0] },
+  }
+
   const member = props.member
   const borderStyle = { borderRadius: member.borderImg }
+  const shakeDelay = member.delay
 
   const [animation, setAnimation] = useState(false)
   const [position, setPosition] = useState({ x: 0, y: 0 })
-  const [clicked, setClicked] = useState(false)
+  const [hover, setHover] = useState(false)
   const cardRef = useRef(null)
 
   const handleMousePosition = (e) => {
@@ -65,14 +73,24 @@ const TeamMember = (props) => {
   }, [position])
 
   return (
-    <div
+    <motion.div
+      className='card-div-container'
+      initial={{ x: 0 }}
+      animate={{ x: !hover ? [0, 10, -10, 0] : 0 }}
+      transition={{ duration: 0.3, delay: shakeDelay, repeat: Infinity, repeatDelay: 2}}
+    >
+      <div
       className='team-card card'
       ref={cardRef}
-      onMouseEnter={() => setAnimation(prevAnimation => !prevAnimation)}
+      onMouseEnter={() => {
+        setAnimation(prevAnimation => !prevAnimation)
+        setHover(true)} }
       onMouseLeave={() => {
         setAnimation(prevAnimation => !prevAnimation)
         resetProperties()
+        setHover(false)
       }}
+      variants={cardAnimation}
     >
       <img src={member.photo} alt="" style={borderStyle} />
       <div className="team-card-text">
@@ -80,6 +98,8 @@ const TeamMember = (props) => {
         <span>{member.title}</span>
       </div>
     </div>
+    </motion.div>
+    
   )
 }
 

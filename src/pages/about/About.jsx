@@ -7,6 +7,7 @@ import TeamMember from "./TeamMember"
 import { Link } from "react-router-dom"
 import contentText from './Content'
 import memberList from "./Member"
+import { AnimatePresence, motion } from "framer-motion"
 
 const About = () => {
 
@@ -19,17 +20,17 @@ const About = () => {
   const dateTitle = (e) => {
     switch (e) {
       case 25: return (
-        <h1 className="dateTitle">2010</h1>
+        <h1 className="dateTitle">2014</h1>
       );
         break;
 
       case 50: return (
-        <h1 className="dateTitle">2015</h1>
+        <h1 className="dateTitle">2017</h1>
       );
         break;
 
       case 100: return (
-        <h1 className="dateTitle">2020</h1>
+        <h1 className="dateTitle">2022</h1>
       );
         break;
       default:
@@ -117,21 +118,18 @@ const About = () => {
             </span>
           </div>
           <div className="timelineText-container" >
-            {
-              contentText.map((value, index) => (
                 <TimelineContent
                   date={date}
                   setDate={setDate}
-                  content={value}
-                  key={index}
+                  content={contentText}
                 />
-              ))
-            }
           </div>
         </article>
         <article className="team-container" style={{ backgroundImage: `url(${goutteGm})` }}>
           <h1 >LA FINE EQUIPE</h1>
-          <div className="teamCard-container">
+          <div 
+          className="teamCard-container"
+          >
             {
               memberList.map((value, index) => (
                 <TeamMember key={index} member={value} />

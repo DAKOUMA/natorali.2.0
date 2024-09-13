@@ -28,3 +28,13 @@ footer {
         }
     }
 }
+
+@media screen and (max-width: 800px) {
+    .footer-adresse {
+        width: 40%;
+        > span {
+            font-size: 0.7rem;
+        }
+    }
+}
+
