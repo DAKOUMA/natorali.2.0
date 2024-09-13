@@ -14,7 +14,7 @@ const Footer = () => {
       </div>
       <div className='footer-link'>
         <Link to={'https://web.facebook.com/natorali'}><FaFacebookSquare size={'2rem'}/></Link>
-        <Link to={'mailto:ramerison.anselme@gmail.com'}><IoIosMail size={'2rem'}/></Link>
+        <Link to={'mailto:contact@natorali.com'}><IoIosMail size={'2rem'}/></Link>
       </div>
     </footer>
   )

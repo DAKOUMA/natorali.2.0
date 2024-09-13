@@ -107,7 +107,7 @@ const Contact = () => {
                 type="text"
                 name="name"
                 id="name"
-                placeholder='Ramerison Anselme'
+                placeholder='Votre nom'
                 value={userName[0]}
                 onFocus={() => handleFocus(1)}
                 onBlur={() => handleBlur(1)}
@@ -131,7 +131,7 @@ const Contact = () => {
                 type="text"
                 name='mail'
                 id='mail'
-                placeholder='ramerison.anselme@gmail.com'
+                placeholder='votre.mail@mail.com'
                 value={userMail[0]}
                 onFocus={() => handleFocus(2)}
                 onBlur={() => handleBlur(2)}
@@ -154,7 +154,7 @@ const Contact = () => {
               <textarea
                 name="message"
                 id="message"
-                placeholder='Ecrit ton texte ici'
+                placeholder='Ecrivez votre texte ici'
                 value={userText[0]}
                 onFocus={() => handleFocus(3)}
                 onBlur={() => handleBlur(3)}
@@ -185,7 +185,7 @@ const Contact = () => {
                 </div>
                 <div>
                   
-                  <Link to={'mailto:ramerison.anselme@gmail.com'}><IoIosMail size={'3rem'}/></Link>
+                  <Link to={'mailto:contact@natorali.com'}><IoIosMail size={'3rem'}/></Link>
                   <h2>E-mail</h2>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { goutte, logo } from "../../assets/images/images";
+import { goutte, logo, logoDark } from "../../assets/images/images";
 import { HiOutlineBars3, HiXMark } from "react-icons/hi2";
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import NavbarMenu from './NavbarMenu';
@@ -15,16 +15,16 @@ const NavBar = () => {
   })
 
   return (
-    <header>
+    <motion.header>
       <motion.nav
         layout
         className={isScrolled ? 'scrolled' : ''}
-        initial={{ backgroundColor: "#ffffff00", boxShadow: "none" }}
-        animate={isScrolled ? { backgroundColor: "#145858", boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)" } : { backgroundColor: "#ffffff00", boxShadow: "none" }}
-        transition={{ duration: 0.3 }}
+        initial={{ backgroundColor: "#ffffff00", boxShadow: "none", y: 20 }}
+        animate={isScrolled ? { backgroundColor: "#145858", boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)", y: 0 } : { backgroundColor: "#ffffff00", boxShadow: "none", y: 20 }}
+        transition={{ duration: 0.4 }}
       >
         <Link to={'/'}>
-          <img src={logo} className='logoGm' alt="" />
+          { isScrolled ? <img src={logo} className='logoGm' alt="" /> : <img src={logoDark} className='logoGm' alt="" />}
           <img src={goutte} className='logoSm' alt="" />
         </Link>
         <ul className={`navbarMenu-list-lg`}>
@@ -35,7 +35,7 @@ const NavBar = () => {
         </ul>
         <NavbarMenu />
       </motion.nav>
-    </header>
+    </motion.header>
   )
 }
 
