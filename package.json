@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "expo": "^51.0.32",
     "framer-motion": "^11.3.31",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
